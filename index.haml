@@ -1,0 +1,17 @@
+---
+layout: default
+---
+== {% for post in site.posts %}
+.row.posting.posting-listed
+  .posting-header{:style=>"background: url('/img/{{post.path | remove: '.md' | remove: '_posts/' | append: '.jpg'}}') no-repeat; background-size: cover;"}
+    %a.title-image{:href=>"{{ post.url }}"}
+      .text.first
+        %h4
+          %span
+            {{post.city}} - {{post.date | date: '%B %-d, %Y' }}
+      .text.third
+        %h3
+          {{post.title}}
+        %hr/
+        %p {{ post.excerpt }}
+== {% endfor %}

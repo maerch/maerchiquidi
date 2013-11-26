@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+.jumbotron
+  .container
+    %h4 Twitter, baby!
+    %p Wir beide lesen und benutzen Twitter recht regelmäßig und vergessen Facebook in aller Regelmäßigkeit. Wenn ihr also die heißesten Scheiß wissen wollt, noch bevor unser Blog davon erfährt, dann schaut da mal vorbei.
+
+.row
+  .col-lg-6.col-md-6.twitter
+    %div
+      %img{:src => "/img/maerch.jpg"}
+    %a.twitter-timeline{:href=>"https://twitter.com/maerch", :data => {:widget_id=>"395581180499591169"}}
+      Tweets by @maerch
+    :javascript
+      function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+
+  .col-lg-6.col-md-6.twitter
+    %div
+      %img{:src=>"/img/miriquidi.jpg"}
+    %a.twitter-timeline{:href=>"https://twitter.com/miriquida", :data => {:widget_id=>"395582330892333056"}}
+      Tweets von @miriquida
+    :javascript
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+

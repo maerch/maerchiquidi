@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Einmal um die Welt. Über Sinn und Unsinn unterwegs.">
+    <meta name="author" content="maerch & miriquidi">
+
+    <title>maerchiquidi vs. the world</title>
+    <link rel="shortcut icon" href="/favicon.ico" >
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/main.css" rel="stylesheet">
+
+    <!-- Eat me RSS feed -->
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/feed.xml">
+  </head> 
+  
+  <body>
+
+  <!-- Header and navigation -->
+  <header id="fixedbar" class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+    <div class="container" style="width: 100%;">
+      <div id="title" style="float: left;">
+        <a href="/"><h2>maerchiquidi vs. <span><img src="/img/globe-wob.png" /></span></h2></a>
+      </div>
+      <div id="social" class="pull-right">
+        <h2>
+          <!--span><a href="/about.html"><img src="/img/about.png" height="28" width="28" /></a></span-->
+          <span><a href="/twitter.html"><img src="/img/twitter.png" height="28" width="28" /></a></span>
+          <span><a href="/feed.xml"><img src="/img/rss.png" height="28" width="28" /></a></span>
+        </h2>
+      </div>
+    </div>
+  </header>      
+
+  <!-- Main content -->
+  <div class="container content">
+    {{ content }}
+  </div>
+
+  <div class="footer">
+    2013 · http://<a href="http://maerchiquidi.de/">maerchiquidi.de</a>/ · <a href="impressum.html">Impressum</a>
+  </div>
+
+  <!-- Javascript -->
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="/js/bootstrap.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    var fixedBar = $('#fixedbar');
+    var opacity = 1.0;
+    $(window).on('scroll',function() {
+      opacity = 1-(Math.min(40, $(this).scrollTop()-50)/100.0);
+      fixedBar.fadeTo(0, opacity);
+    });
+
+    fixedBar.hover(
+      function() { fixedBar.fadeTo(250, 1.0);     },
+      function() { fixedBar.fadeTo(250, opacity); }
+    );
+
+    var firstLeftPadding = $('div.first').css('padding-left');
+    $('.posting-listed .posting-header').hover(
+      function() { 
+       $(this).fadeTo(250, 0.9); 
+
+       var first = $(this).find('div.first');
+       var third = $(this).find('div.third');
+
+       var firstWidth = parseInt(first.outerWidth(true));
+       var thirdWidth = parseInt(third.outerWidth(true));
+
+       var newLeftPadding = thirdWidth - firstWidth + parseInt(firstLeftPadding);
+
+       first.animate({paddingLeft: newLeftPadding + "px"});
+
+       var height = parseInt(third.outerHeight(true));
+       
+       var newBottom = 500 - height - 90;
+       third.animate({bottom: newBottom+"px" });
+      },
+      function() {
+        $(this).fadeTo(250, 1.0); 
+        $(this).find('div.first').animate({paddingLeft: firstLeftPadding});
+        $(this).find('div.third').animate({bottom: "20px" });
+      }
+
+    );
+
+  });
+  </script>
+
+  </body>
+</html>
