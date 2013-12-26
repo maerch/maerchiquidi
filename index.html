@@ -1,0 +1,46 @@
+---
+layout: default
+---
+{% for post in paginator.posts %}
+<div class="row posting posting-listed">
+  <div class="posting-header" style="background: url('/img/{{post.path | remove: '.md' | remove: '_posts/' | append: '.jpg'}}') no-repeat; background-size: cover;">
+    <a class="title-image" href="{{ post.url }}">
+      <div class="text first">
+        <h4><span>{{post.city}} - {{post.date | date: '%B %-d, %Y' }}</span></h4>
+      </div>
+      <div class="text third">
+        <h3>{{post.title}}</h3>
+        <hr/>
+        <p>{{ post.excerpt }}</p>
+      </div>
+    </a>
+  </div>
+</div>
+{% endfor %}
+
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  Mehr: 
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo;</a>
+  {% else %}
+    <span>&laquo;·</span>
+  {% endif %}
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      {{ page }}
+    {% elsif page == 1 %}
+      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+    ·
+  {% endfor %}
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">&raquo;</a>
+  {% else %}
+    <span>&raquo;</span>
+  {% endif %}
+</div>
+{% endif %}

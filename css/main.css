@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
 
 body {
-	margin-top: 49px; /* 50px is the height of the navbar - change this if the navbarn height changes */
+  margin-top: 49px;
   margin-bottom: 20px;
   color: #444;
   font-family: 'Source Sans Pro', sans-serif;
@@ -56,7 +56,6 @@ div.posting {
 
 div.footer {
   text-align: center;
-	margin: 50px 0;
 }
 
 div.impressum {
@@ -153,6 +152,14 @@ h4 {
   font-size: 24px;
   font-weight: 400;
   color: #222;
+  text-align: center;
+}
+
+div.pagination {
+  font-family: 'Amatic SC', serif;
+  font-size: 32px;
+  font-weight: 800;
+  width: 100%;
   text-align: center;
 }
 
