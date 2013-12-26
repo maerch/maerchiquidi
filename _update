@@ -1,4 +1,6 @@
 #!/bin/sh
+# Updates the website on the server only for changed files
+# Preserves caching of unchanged files
 
 git pull
 mkdir -p _html/
