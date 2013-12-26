@@ -1,0 +1,6 @@
+#!/bin/sh
+
+git pull
+mkdir -p _html/
+jekyll build
+rsync -rc _site/* _html/.
