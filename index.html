@@ -10,8 +10,10 @@ layout: default
       </div>
       <div class="text third">
         <h3>{{post.title}}</h3>
+        {% if post.excerpt != "" %}
         <hr/>
         <p>{{ post.excerpt }}</p>
+        {% endif %}
       </div>
     </a>
   </div>
