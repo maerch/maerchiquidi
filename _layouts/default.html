@@ -51,6 +51,7 @@
   <script src="/js/masonry.pkgd.min.js"></script>
   <script src="/js/bootstrap.js"></script>
   <script type="text/javascript">
+  var thumbs = {};
   $(document).ready(function(){
     var fixedBar = $('#fixedbar');
     var opacity = 1.0;
@@ -91,6 +92,28 @@
       }
 
     );
+
+    $(".item").on("click", function(d) { 
+      var item = $(this);
+      var background = item.css("background-image");
+      if(item.hasClass("large")) {
+        background = thumbs[background];
+      } else {
+        var thumb     = background.replace("thumb/", "");
+        thumbs[thumb] = background;
+        background    = thumb;
+      }
+      item.css("background-image", background);
+      item.toggleClass("large");
+      $(".js-masonry").masonry();
+      $(".js-masonry").masonry( 'on',  'layoutComplete', function() {
+        $('html, body').animate({
+          scrollTop: item.offset().top - 70
+        }, 250);
+        return true;
+      });
+    })
+
  });
   </script>
 

@@ -17,13 +17,13 @@ module Jekyll
       def img_tag img
         classes = ["item"]
         dimension = FastImage.size(img)
-        classes << "w2" if dimension[0] > dimension[1]
+        classes << ((dimension[0] > dimension[1]) ? "landscape" : "portrait")
         img.scan(/[a-z]\d/) { |m|  classes << m }
-        "<div class='#{classes.join(' ')}' style=\"background: url('/#{img}') no-repeat; background-size: cover;\"></div>"
+        "<div class='#{classes.join(' ')}' style=\"background-image: url('/#{img}');\"></div>"
       end
 
       def render(context)
-        result_tag = "<div class='js-masonry' data-masonry-options='{ \"columnWidth\":\".grid-sizer\", \"itemSelector\": \".item\" }'><div class='grid-sizer'></div>"
+        result_tag = "<div class='js-masonry' data-masonry-options='{ \"isFitWidth\": true, \"columnWidth\":\".grid-sizer\", \"itemSelector\": \".item\" }'><div class='grid-sizer'></div>"
         Dir["#{thumb_dir context}/*.jpg"].sort_by { |img| img_number(img) }.each do |img|
           result_tag << img_tag(img)
         end
