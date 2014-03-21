@@ -216,8 +216,8 @@ path {
   margin: none;
 }
 
-.item.portrait,.grid-sizer{ width: 100%; height: 600px; }
-.item.landscape           { width: 100%; height: 200px; }
+.item.portrait,.grid-sizer{ width: 300px; height: 600px; }
+.item.landscape           { width: 300px; height: 200px; }
 }
 
 
