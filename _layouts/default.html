@@ -104,11 +104,14 @@
       if(item.hasClass("large")) {
         background = thumbs[background];
       } else {
-        var thumb     = background.replace("thumb/", "");
-        thumbs[thumb] = background;
-        background    = thumb;
+        var large     = background.replace("thumb/", "");
+        thumbs[large] = background;
+        background    = large;
+
+        $.get(large.match(/url\((.*)\)/)[1], function( data ) {
+          item.css("background-image", background);
+        });
       }
-      item.css("background-image", background);
       item.toggleClass("large");
       $(".js-masonry").masonry();
       $(".js-masonry").masonry( 'on',  'layoutComplete', function() {
