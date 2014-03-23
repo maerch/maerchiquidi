@@ -93,11 +93,6 @@
 
     );
 
-    $(".item").hover (
-      function() { $(this).fadeTo(250, 0.9); },
-      function() { $(this).fadeTo(250, 1  ); }
-    );
-
     $(".item").on("click", function(d) { 
       var item = $(this);
       var background = item.css("background-image");
