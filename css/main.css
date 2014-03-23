@@ -2,11 +2,19 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
 
 body {
-  margin-top: 49px;
+  margin-top: 65px;
   margin-bottom: 20px;
   color: #444;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: 300;
+}
+
+#fixedbar {
+  background-image: url(/img/stressed_linen_@2X.png);
+  background-position: initial initial;
+  background-repeat: initial initial;
+
+  box-shadow: rgb(0, 0, 0) 1px 1px 10px;
 }
 
 h1, h2, h3, h4, h5, h6 {
