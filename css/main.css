@@ -51,6 +51,12 @@ div.posting-header {
   background-size: cover;
 }
 
+div.posting-header, img.img-responsive, .item {
+  -moz-box-shadow:    0 0 5px #000;
+  -webkit-box-shadow: 0 0 5px #000;
+  box-shadow:         0 0 5px #000;
+}
+
 div.world-map {
   text-align: center;
   margin-top: 11px;
