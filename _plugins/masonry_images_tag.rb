@@ -2,7 +2,7 @@ require 'fastimage'
 
 module Jekyll
   module Converters
-    class BlogImagesTag < Liquid::Tag
+    class MasonryImageTag < Liquid::Tag
 
       def img_number img
         img.match(/.*\/(\d+).*\.jpg$/)[1].to_i
@@ -34,4 +34,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('masonry_images', Jekyll::Converters::BlogImagesTag)
+Liquid::Template.register_tag('masonry_images', Jekyll::Converters::MasonryImageTag)
