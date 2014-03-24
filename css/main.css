@@ -221,6 +221,9 @@ path {
   -ms-transform: scale(1.1);
   transform: scale(1.1);
   z-index: 999;
+  -moz-box-shadow:    0 0 15px #000;
+  -webkit-box-shadow: 0 0 15px #000;
+  box-shadow:         0 0 15px #000;
 }
 .item { border: 5px solid white; cursor: pointer; background-size: cover; background-position: center; background-repeat: no-repeat; }
 .item.portrait,.grid-sizer{ width: 200px; height: 400px; }
@@ -244,6 +247,8 @@ path {
 .js-masonry {
   margin: none;
 }
+
+h2 .maerchiquidi { display: none; }
 
 .item.portrait,.grid-sizer{ width: 300px; height: 600px; }
 .item.landscape           { width: 300px; height: 200px; }
