@@ -1,12 +1,11 @@
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700);
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300);
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic);
 
 body {
   margin-top: 65px;
   margin-bottom: 20px;
   color: #444;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-weight: 300;
+  font-family: 'Arvo', serif;
 }
 
 #fixedbar {
