@@ -23,7 +23,7 @@ module Jekyll
     safe true
     priority :low
 
-     def matches(ext)
+    def matches(ext)
       ext =~ /sass/i
     end
 
