@@ -1,0 +1,71 @@
+---
+# YAML front-matter for the SASS-generator
+---
+
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700)
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic)
+
+$text_font:          'Arvo', serif
+$heading_font:       'Amatic SC', serif
+
+$large_screen:      1200
+$medium_screen:     992
+$small_screen:      768
+
+body
+  font-family: $text_font
+  font-weight: 400
+  color:       #444
+  padding-top: 70px
+
+#header
+  height: 60px
+  width: 100%
+  text-decoration: none
+
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  z-index: 9999
+  
+  background-image: url(/img/stressed_linen_@2X.png)
+  background-position: initial initial
+  background-repeat: initial initial
+
+  border-width: 0 0 1px
+  box-shadow: rgb(0, 0, 0) 1px 1px 10px
+
+  .wrapper
+    margin: 10px auto
+
+    @media (min-width: #{$small_screen}px)
+      max-width: #{$small_screen - 30}px
+
+    @media (min-width: #{$medium_screen}px)
+      max-width: #{$medium_screen - 30}px
+
+    @media (min-width: #{$large_screen}px)
+      max-width: #{$large_screen - 30}px
+
+    a, a:hover
+      text-decoration: none
+
+    #title
+      float: left !important
+
+    #social
+      float: right !important
+
+
+    img
+      vertical-align: middle
+
+    a
+      color: white
+      font-family: $heading_font
+      font-size: 30px
+
+#footer
+  text-align: center
+  margin: 20px

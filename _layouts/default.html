@@ -9,10 +9,8 @@
     <title>maerchiquidi vs. the world</title>
     <link rel="shortcut icon" href="/favicon.ico" >
 
-    <!-- Bootstrap core CSS -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
-
     <!-- Custom CSS -->
+    <link href="/css/normalize.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
 
     <!-- Eat me RSS feed -->
@@ -22,17 +20,14 @@
   <body>
 
   <!-- Header and navigation -->
-  <header id="fixedbar" class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
-    <div class="container" style="width: 100%;">
-      <div id="title" style="float: left;">
-        <a href="/"><h2>maerchiquidi vs. <span><img src="/img/globe-wob@2.png" width="28" height="28" /></span></h2></a>
+  <header id="header">
+    <div class="wrapper">
+      <div id="title">
+        <a href="/">maerchiquidi vs. <span><img src="/img/globe-wob@2.png" width="28" height="28" /></a>
       </div>
-      <div id="social" class="pull-right">
-        <h2>
-          <!--span><a href="/about.html"><img src="/img/about.png" height="28" width="28" /></a></span-->
-          <span><a href="/twitter.html"><img src="/img/twitter@2.png" height="28" width="28" /></a></span>
-          <span><a href="http://feeds.feedburner.com/maerchiquidi"><img src="/img/rss@2.png" height="28" width="28" /></a></span>
-        </h2>
+      <div id="social">
+        <a href="/twitter.html"><img src="/img/twitter@2.png" height="28" width="28"></a>
+        <a href="http://feeds.feedburner.com/maerchiquidi"><img src="/img/rss@2.png" height="28" width="28"></a>
       </div>
     </div>
   </header>      
@@ -42,7 +37,7 @@
     {{ content }}
   </div>
 
-  <div class="footer">
+  <div id="footer">
     2014 · http://<a href="http://maerchiquidi.de/">maerchiquidi.de</a>/ · <a href="https://github.com/maerch/maerchiquidi">GitHub</a> · <a href="impressum.html">Impressum</a>
   </div>
 
@@ -53,7 +48,7 @@
   <script type="text/javascript">
   var thumbs = {};
   $(document).ready(function(){
-    var fixedBar = $('#fixedbar');
+    var fixedBar = $('#header');
     var opacity = 1.0;
     $(window).on('scroll',function() {
       opacity = 1-(Math.min(40, $(this).scrollTop()-50)/100.0);
