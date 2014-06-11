@@ -2,17 +2,15 @@
 layout: default
 ---
 
-<div class="row posting">
 <div class="posting-header" style="background: url('/img/{{page.path | remove: '.md' | remove: '_posts/' | append: '.jpg'}}') no-repeat; background-size: cover;">
-  <div class="title-image">
-      <div class="text first">
-        <h4><span>{{page.city}} - {{page.date | date: '%B %-d, %Y' }}</span></h4>
-      </div>
-      <div class="text second">
-        <h4><span>{{ page.title }}</span></h4>
-      </div>
+  <div class="center">
+    <h4 class="city-date">
+      {{page.city}} - {{page.date | date: '%B %-d, %Y' }}
+    </h4>
+    <h3 class="title">
+      {{ page.title }}
+    </h3>
   </div>
-</div>
 </div>
 
 <div class="content">

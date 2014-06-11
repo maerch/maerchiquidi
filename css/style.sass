@@ -4,8 +4,9 @@
 
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700)
 @import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic)
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic)
 
-$text_font:          'Arvo', serif
+$text_font:          'Lora', serif
 $heading_font:       'Amatic SC', serif
 
 $large_screen:      1200
@@ -16,7 +17,7 @@ body
   font-family: $text_font
   font-weight: 400
   color:       #444
-  padding-top: 70px
+  padding-top: 35px
 
 #header
   height: 60px
@@ -65,6 +66,35 @@ body
       color: white
       font-family: $heading_font
       font-size: 30px
+
+.posting-header
+  color: black
+  height: 350px
+  @media (min-width: #{$small_screen}px)
+    height: 400px
+  @media (min-width: #{$medium_screen}px)
+    height: 450px
+  @media (min-width: #{$large_screen}px)
+    height: 600px
+  .center
+    position: relative
+    margin:   0 auto
+    width:    300px
+    top:      100px
+    @media (min-width: #{$small_screen}px)
+      top: 150px
+    @media (min-width: #{$medium_screen}px)
+      top: 200px
+    @media (min-width: #{$large_screen}px)
+      top: 250px
+  h3.title, h4.city-date
+    background-color: rgba(255,255,255,0.7)
+    padding: 10px
+    margin: 5px
+    text-align: center
+  h3.title
+    font-size: 1.4em
+
 
 #footer
   text-align: center
