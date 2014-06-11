@@ -13,27 +13,26 @@ layout: default
   </div>
 </div>
 
-<div class="text">
-  {% if page.no-picture %}
-    <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-2 col-lg-offset-2" >
-      {{ content }}
-      <div id="disqus_thread"></div>
-    </div>
-  {% elsif page.masonry %}
-    <div class="col-lg-12 col-md-12" >
-      {% masonry_images %}
-      <div id="disqus_thread"></div>
-    </div>
+  {% if page.masonry %}
+    {% masonry_images %}
+    <div id="disqus_thread"></div>
   {% else %}
+    <div class="text">
     {% if page.excerpt != "" %}
     <p class="excerpt">{{ page.excerpt }}</p>
     <hr/>
     {% endif %}
-    {{ content }}
+    {% if content contains "<!-- images -->" %}
+      {{ content | split:"<!-- images -->" | first % }}
+      <p style="text-align: center;"><a class="continue-link" href="#continue"><span></span></a></p>
+      </div>
+      {% masonry_images only_thumbs: true %}
+      <div class="text" id="continue">
+      {{ content | split:"<!-- images -->" | last % }}
+    {% else %}
+      {{ content }}
+    {% endif %}
     <div id="disqus_thread"></div>
-    <div class="col-lg col-md-6">
-      {% blog_images %}
-    </div>
   {% endif %}
 </div>
 

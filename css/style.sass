@@ -17,6 +17,11 @@ $large_screen:      1200
 $medium_screen:     992
 $small_screen:      768
 
+* 
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
 body
   font-family: $text_font
   font-weight: 400
@@ -106,6 +111,10 @@ body
   margin: 0 auto
   font-size: 1.1em
   line-height: 1.6em
+  position: relative
+  min-height: 1px
+  padding-right: 15px
+  padding-left: 15px
   @media (min-width: #{$small_screen}px)
     margin-left: 50px
     width: 450px
@@ -114,7 +123,7 @@ body
     width: 550px
   @media (min-width: #{$large_screen}px)
     margin: 0 auto
-    width: 600px
+    width: 650px
 
   .site-note
     position: relative
@@ -146,6 +155,81 @@ body
   p.excerpt
     font-weight: 700
     font-style:  italic
+
+a.continue-link span
+  content: ''
+  display: block
+  width: 16px
+  height: 16px
+  border: 2px solid black
+  margin: 0 auto
+  background: rgba(0,0,0,0)
+  border-left: 0
+  border-top: 0
+  outline: none
+  -webkit-transform: rotate(45deg)
+  -moz-transform: rotate(45deg)
+  -ms-transform: rotate(45deg)
+  -o-transform: rotate(45deg)
+  transform: rotate(45deg)
+  cursor: pointer
+
+.js-masonry
+  margin: 0 auto
+  line-height: 1.5em
+  font-size: 1.1em
+  margin-top: 20px
+  width: 1200px
+
+.item
+  -webkit-transition-duration: 0.3s
+  transition-duration: 0.3s
+  -webkit-transition-property: -webkit-transform
+  transition-property: transform
+  -webkit-transform: translateZ(0)
+  -ms-transform: translateZ(0)
+  transform: translateZ(0)
+  transition: width 0.3s, height 0.3s, margin 0.3s
+
+.item:hover 
+  -moz-box-shadow:    0 0 15px #000
+  -webkit-box-shadow: 0 0 15px #000
+  box-shadow:         0 0 15px #000
+  z-index: 999
+  margin: -100px
+
+.item 
+  border: 5px solid white 
+  cursor: pointer
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+
+.only-thumbs
+  cursor: default
+
+.item.portrait,.grid-sizer
+  width: 200px
+  height: 400px
+  &:hover
+    width: 400px
+    height: 600px
+.item.shove-left:hover
+  margin-left: -180px
+.item.shove-right:hover
+  margin-left: -20px
+.item.landscape           
+  width: 400px
+  height: 200px
+  &:hover
+    width: 600px
+    height: 400px
+.item.portrait.large      
+  width: 600px
+  height: 800px
+.item.landscape.large     
+  width: 800px
+  height: 600px
 
 #footer
   text-align: center

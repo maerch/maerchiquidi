@@ -4,6 +4,11 @@ module Jekyll
   module Converters
     class MasonryImageTag < Liquid::Tag
 
+      def initialize tag_name, text, tokens
+        super
+        @options = eval "{#{text}}"
+      end
+
       def img_number img
         img.match(/.*\/(\d+).*\.jpg$/)[1].to_i
       end
@@ -16,6 +21,7 @@ module Jekyll
 
       def img_tag img
         classes = ["item"]
+        classes << "only-thumbs" if @options[:only_thumbs]
         dimension = FastImage.size(img)
         classes << ((dimension[0] > dimension[1]) ? "landscape" : "portrait")
         img.scan(/[a-z]\d/) { |m|  classes << m }

@@ -48,11 +48,25 @@
   <script type="text/javascript">
   var thumbs = {};
   $(document).ready(function(){
+
+    $('a.continue-link').click(function(){
+      $('html, body').animate({
+              scrollTop: $( $.attr(this, 'href') ).offset().top - 100
+          }, 500);
+      return false;
+    });
+
     var fixedBar = $('#header');
+    var postingCenter = $('.posting-header .center')
     var opacity = 1.0;
     $(window).on('scroll',function() {
       opacity = 1-(Math.min(40, $(this).scrollTop()-50)/100.0);
       fixedBar.fadeTo(0, opacity);
+
+      var new_center_top = ($(this).scrollTop()/5) + 250 
+      if(new_center_top < 400) {
+        postingCenter.css("top", new_center_top + "px" );
+      }
     });
 
     fixedBar.hover(
@@ -60,36 +74,28 @@
       function() { fixedBar.fadeTo(250, opacity); }
     );
 
-    var firstLeftPadding = $('div.first').css('padding-left');
-    $('.posting-listed .posting-header').hover(
-      function() { 
-       $(this).fadeTo(250, 0.9); 
-
-       var first = $(this).find('div.first');
-       var third = $(this).find('div.third');
-
-       var firstWidth = parseInt(first.outerWidth(true));
-       var thirdWidth = parseInt(third.outerWidth(true));
-
-       var newLeftPadding = thirdWidth - firstWidth + parseInt(firstLeftPadding);
-
-       first.animate({paddingLeft: newLeftPadding + "px"});
-
-       var height = parseInt(third.outerHeight(true));
-       
-       var newBottom = 500 - height - 90;
-       third.animate({bottom: newBottom+"px" });
-      },
-      function() {
-        $(this).fadeTo(250, 1.0); 
-        $(this).find('div.first').animate({paddingLeft: firstLeftPadding});
-        $(this).find('div.third').animate({bottom: "20px" });
+    var mouseInItem = function() {
+      var distanceRight = $(window).width() - ($(this).offset().left + $(this).width());
+      var distanceLeft = $(this).offset().left
+      console.log("distance-right " + distanceRight)
+      if(distanceRight < 100 ) {
+        $(this).addClass("shove-left");
       }
+      if(distanceLeft < 100 ) {
+        $(this).addClass("shove-right");
+      }
+    };
+    var mouseOutItem = function() {
+      $(this).removeClass("shove-left");
+      $(this).removeClass("shove-right");
+    }
 
-    );
-
+    $(".item").hover(mouseInItem, mouseOutItem);
     $(".item").on("click", function(d) { 
       var item = $(this);
+      if(item.hasClass("only-thumbs")) {
+        return;
+      }
       var background = item.css("background-image");
       if(item.hasClass("large")) {
         background = thumbs[background];

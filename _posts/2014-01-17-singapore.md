@@ -22,6 +22,8 @@ Zugegeben, es ist wirklich sauber hier, vielleicht so dreckig wie Dortmund, also
 
 Ich würde jetzt auch nicht sagen, dass ich deswegen enttäuscht war, nur überrascht. 
 
+<!-- images -->
+
 Unser Hostel befand sich in Chinatown. In der ersten Nacht, als ich im Dorm unter Kristin geschlafen habe, war ich gerade wieder dabei sie zu piesacken in dem ich ihre Matratze von unten hochdrückte und schüttelte. Diesmal blieb mein Grinsen aufgrund der Beschimpfungen aber aus. Die aufgeschreckte Matratze begann sich von selbst zu bewegen. Bettwanzen. Hunderte. Riesig und vollgesogen mit dem Blut zahlreicher Backpacker. Da es spät und das Hostel schon voll war, blieb uns nichts anderes übrig als zu kämpfen. Im Rausch zerdrückten wir eine Wanze nach der anderen. Der Mülleimer neben uns füllte sich mit Leichen; unser sensibles Vegetarierherz haben wir ins Badezimmer geschickt mit der Aufforderung die Ohren zuzuhalten.
 
 Die Nacht wurde immer länger und unsere Daumen taten schon weh. Es war zwecklos. Sie waren in der Überzahl. Auf eine getötete Wanze folgten drei neue. Sogar aus dem Mülleimer krochen sie wieder heraus. Es roch nach Niederlage. Wir ergaben uns und legten uns auf unser Bett, wie auf einen Präsentierteller. Erstaunlich wie lange ein übernächtigter Körper noch wach sein kann, wenn er alle paar Sekunden glaubt etwas krabbelt über seine Haut.
