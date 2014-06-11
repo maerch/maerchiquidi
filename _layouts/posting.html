@@ -13,7 +13,7 @@ layout: default
   </div>
 </div>
 
-<div class="content">
+<div class="text">
   {% if page.no-picture %}
     <div class="col-lg-8 col-md-8 col-lg-offset-1 col-md-offset-2 col-lg-offset-2" >
       {{ content }}
@@ -25,10 +25,12 @@ layout: default
       <div id="disqus_thread"></div>
     </div>
   {% else %}
-    <div class="col-lg-6 col-md-6" >
-      {{ content }}
-      <div id="disqus_thread"></div>
-    </div>
+    {% if page.excerpt != "" %}
+    <p class="excerpt">{{ page.excerpt }}</p>
+    <hr/>
+    {% endif %}
+    {{ content }}
+    <div id="disqus_thread"></div>
     <div class="col-lg col-md-6">
       {% blog_images %}
     </div>
