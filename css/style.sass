@@ -3,8 +3,12 @@
 ---
 
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC:400,700)
+@import url(http://fonts.googleapis.com/css?family=Calligraffitti)
+@import url(http://fonts.googleapis.com/css?family=Sue+Ellen+Francisco)
+@import url(http://fonts.googleapis.com/css?family=Aladin)
+
 @import url(http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic)
-@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic)
+@import url(http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic)
 
 $text_font:          'Lora', serif
 $heading_font:       'Amatic SC', serif
@@ -53,11 +57,12 @@ body
       text-decoration: none
 
     #title
+      margin-left: 10px
       float: left !important
 
     #social
+      margin-right: 10px
       float: right !important
-
 
     img
       vertical-align: middle
@@ -70,16 +75,17 @@ body
 .posting-header
   color: black
   height: 350px
+  box-shadow: rgb(0, 0, 0) 1px 1px 10px
   @media (min-width: #{$small_screen}px)
     height: 400px
   @media (min-width: #{$medium_screen}px)
     height: 450px
   @media (min-width: #{$large_screen}px)
-    height: 600px
+    height: 550px
   .center
     position: relative
     margin:   0 auto
-    width:    300px
+    width:    350px
     top:      100px
     @media (min-width: #{$small_screen}px)
       top: 150px
@@ -95,6 +101,51 @@ body
   h3.title
     font-size: 1.4em
 
+.text
+  width: 80%
+  margin: 0 auto
+  font-size: 1.1em
+  line-height: 1.6em
+  @media (min-width: #{$small_screen}px)
+    margin-left: 50px
+    width: 450px
+  @media (min-width: #{$medium_screen}px)
+    margin-left: 100px
+    width: 550px
+  @media (min-width: #{$large_screen}px)
+    margin: 0 auto
+    width: 600px
+
+  .site-note
+    position: relative
+    p
+      font-style: italic
+      font-size: 0.8em
+      @media (min-width: #{$small_screen}px)
+        font-size: 0.6em
+        width: 200px
+        position: absolute
+        line-height: 1.8em
+        top: -50px
+        left: 500px
+      @media (min-width: #{$medium_screen}px)
+        width: 250px
+        left: 600px
+      @media (min-width: #{$large_screen}px)
+        left: 650px
+    
+
+  hr
+    border: 0
+    height: 1px
+    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)) 
+    background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)) 
+    background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)) 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)) 
+
+  p.excerpt
+    font-weight: 700
+    font-style:  italic
 
 #footer
   text-align: center
