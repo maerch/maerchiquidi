@@ -3,7 +3,7 @@ module Jekyll
     class BlogImagesTag < Liquid::Tag
 
       def img_number img
-        img.match(/.*\/(\d+).*\.jpg$/)[1].to_i
+        img.match(/.*\/(\d+).*/)[1].to_i
       end
 
       def thumb_dir context
@@ -36,7 +36,7 @@ module Jekyll
 
       def render(context)
         result_tag = ""
-        Dir["#{thumb_dir context}/*.jpg"].sort_by { |img| img_number(img) }.each do |img|
+        Dir["#{thumb_dir context}/*.{jpg,gif}"].sort_by { |img| img_number(img) }.each do |img|
           result_tag << img_tag(img)+ img_description_tag(img, context)
         end
         result_tag
